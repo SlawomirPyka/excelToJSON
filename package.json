@@ -1,0 +1,25 @@
+{
+  "name": "excelToJSON",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SlawomirPyka/excelToJSON.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SlawomirPyka/excelToJSON/issues"
+  },
+  "homepage": "https://github.com/SlawomirPyka/excelToJSON#readme",
+  "dependencies": {
+    "exceljs": "^3.8.0",
+    "fs": "0.0.1-security",
+    "path": "^0.12.7"
+  }
+}
