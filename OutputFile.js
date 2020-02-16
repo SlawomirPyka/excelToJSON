@@ -1,4 +1,4 @@
-const SpecificationM = [
+[
   {
     title: "1 Control Axes",
     M850W: "null",

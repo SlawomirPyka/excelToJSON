@@ -4,7 +4,7 @@ const fs = require("fs");
 
 let wb = new Excel.Workbook();
 let path = require("path");
-let filePath = path.resolve(__dirname, "Spec.xlsx");
+let filePath = path.resolve(__dirname, "InputFile.xlsx");
 
 wb.xlsx.readFile(filePath).then(function() {
   let sh = wb.getWorksheet("M");
@@ -13,7 +13,6 @@ wb.xlsx.readFile(filePath).then(function() {
   // writing to file wb.xlsx.writeFile("sample2.xlsx");
 
   let myArray = [];
-  console.log(sh.rowCount);
   for (i = 3; i <= sh.rowCount; i++) {
     myArray.push({
       title: `${sh.getRow(i).getCell(1).value}`,
@@ -30,11 +29,8 @@ wb.xlsx.readFile(filePath).then(function() {
     });
   }
 
-  // const text = arr.map(JSON.stringify).reduce((prev, next) => `${prev}\n${next}`);
-  const arrayName = "SpecificationM";
-  let writefilePath = path.resolve(__dirname, "Specification-M.js");
-
+  let writefilePath = path.resolve(__dirname, "OutputFile.js");
   const myArrayText = myArray.map(JSON.stringify);
-  const completeText = `const ${arrayName} = [${myArrayText}]`;
+  const completeText = `[${myArrayText}]`;
   fs.writeFileSync(writefilePath, completeText, "utf-8");
 });
